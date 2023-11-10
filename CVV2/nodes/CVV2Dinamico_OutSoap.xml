@@ -1,0 +1,94 @@
+<node type="ep-model-generic" acquiringIssuing="Both" id="CVV2Dinamico_OutSoap" shareAliasTable="false" >
+  <metaData characterSet="ASCII" >
+    <messageType requestMessageType="AuthenticationRequest" initiatingRequest="false" responseMessageType="AuthenticationResponse" />
+    <fieldAttributeType attributeType="b" justification="Left" padding="0x30" lengthEncoding="Unpacked" lengthUnit="Default" packJustification="Left" packFill="0x0" />
+    <fieldAttributeType attributeType="n" description="Numeric Field" justification="Right" padding="0x30" lengthEncoding="Unpacked" lengthUnit="Default" packJustification="Right" packFill="0x0" />
+    <fieldAttributeType attributeType="p" description="Numeric, Packed." justification="Right" padding="0x30" lengthEncoding="Unpacked" lengthUnit="Default" packJustification="Right" packFill="0x0" />
+    <messageFieldName fieldId="Root" description="Root Payload" />
+    <sequence id="stan" offset="0" period="-1" allocationBlockSize="10000" persistenceFrequency="1" />
+    <sequence id="requestCounter" offset="0" period="999999999999" allocationBlockSize="10000" persistenceFrequency="1" />
+  </metaData>
+  <protocol type="protocol-generic" messageFamily="GENERIC" payloadRoot="Root" fileFormat="false" >
+    <messageTypeAssignment sourceExpr="&apos;AuthenticationResponse&apos;" sourceAsString="false" target="ctx.message_type" />
+    <supportedMessageTypes enabled="true" direction="Outbound" messageType="AuthenticationRequest" />
+    <supportedMessageTypes enabled="true" direction="Inbound" messageType="AuthenticationResponse" />
+    <defaultField type="simple-field" attribute="b" lengthType="Variable" length="-1" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="Root" enabled="true" rawProcessingRequired="false" />
+    <correlationRules multipleAliases="false" >
+      <alias enabled="true" aliasId="Alias_Authentication" >
+        <field fieldId="bytesToHex(ctx.wsapi.correlator)" length="56" justification="Left" pad="0x30" />
+      </alias>
+      <aliasSelector enabled="true" messageTypes="*" direction="*" aliasId="Alias_Authentication" />
+    </correlationRules>
+  </protocol>
+  <sessions >
+    <session type="generic-application-v2" name="CVV2SoapSession" requestSessionName="CVV2DinamicoSession" requestSessionOperation="-" >
+      <inboundAssignments type="ep-model-conditional-script" enabled="true" messageTypes="AuthenticationResponse" script="ctx.wsapi.rri = 1" />
+      <inboundAssignments type="ep-model-conditional-script" enabled="true" messageTypes="AuthenticationResponse" >
+        <script><![CDATA[sess.response.responseCode     ?=    ctx.wsapi.http_status_code   ?: ''
+if(sess.response.responseCode != '200') {
+  
+   def otpValitationErroCode = ''
+   def valor = ext.Root
+   valor = replaceChars(valor, ' ', '')
+   valor = replaceChars(valor, '\n', '')
+   valor = replaceChars(valor, '\r', '')
+
+   if(valor.matches('.*</h2>[0-9]+:.*')) {
+    
+      int idx = indexOf(valor, '</h2>')
+      valor = substring(valor, idx + 5)
+      int idx_dos_puntos = indexOf(valor, ':')
+      otpValitationErroCode = substring(valor, 0, idx_dos_puntos)
+   }
+   
+   sess.response.otpValitationErroCode ?= otpValitationErroCode   ?:''
+}]]></script>
+      </inboundAssignments>
+      <outboundMessageTypeAssignment sourceExpr="&apos;AuthenticationRequest&apos;" sourceAsString="false" target="ctx.message_type" />
+      <outboundAssignments type="ep-model-conditional-script" enabled="true" messageTypes="AuthenticationRequest" >
+        <script><![CDATA[ctx.wsapi.rri          ?= 0 
+ctx.wsapi.correlator   ?= padLeft(ctx.session_id, 48, 16) + padLeft(endpointSequence('requestCounter'), 48, 12)
+
+def xCVV2ApiKkey = params.labelApiKey
+
+ctx.wsapi.http_headers."${xCVV2ApiKkey}"    ?= sess.parameters.apiKey
+ctx.wsapi.url_path                          ?= sess.parameters.urlPath
+
+return true]]></script>
+      </outboundAssignments>
+      <outboundAssignments type="ep-model-conditional-script" enabled="true" messageTypes="AuthenticationRequest" >
+        <script><![CDATA[/*
+ext.CardSecurityCodeVerificationRequest.PAN                                     ?= sess.assignments.pan
+ext.CardSecurityCodeVerificationRequest.SecurityCode.Code                       ?= sess.assignments.reservedPrivate123.CVV2 //'602'
+ext.CardSecurityCodeVerificationRequest.SecurityCode.CodeType                   ?= sess.parameters.codeType //'DCVX2'
+*/
+
+def req
+req.AuthenticationRequest.UserId                                                ?= ''
+req.AuthenticationRequest.TokenId                                               ?= sess.assignments.panAnonizado
+req.AuthenticationRequest.Seed.name                                             ?= sess.assignments.panAnonizado
+req.AuthenticationRequest.OTP                                                   ?= sess.assignments.reservedPrivate123.CVV2
+
+ext.Root = '<?xml version="1.0" encoding="UTF-8"?>' + toXML(req)]]></script>
+      </outboundAssignments>
+    </session>
+    <sessionSelector enabled="true" messageTypes="*" direction="*" session="CVV2SoapSession" />
+  </sessions>
+  <customParameter name="labelApiKey" description="Etiqueta del x-api-key" value="x-api-key" valueType="String" />
+  <channel type="ep-model-channel" inboundRateLimit="-1" sessionLimit="-1" outboundRateLimit="-1" includedInSPM="true" messageLimit="1000" id="cvv2_soap_00" group="Interchanges" warningRate="1000" routingMode="SAME ROUTE" messageOrdering="false" alarmOnChannelDown="false" >
+    <route type="ICEXSHTTPClientRoute" switchPort="8046" enabled="false" mode="BIDIRECTIONAL" connectionRouting="true" responseTimer="6000" ctrlHdr="WSAPI" ctrlHdrDirection="BOTH" enableWebServices="false" >
+      <harouter id="1" />
+      <devprotocol type="devprotocolhttpclient-v3" contenttype="text/xml" requesturi="/" method="POST" sendrqack="ONRESPONSE" maxdevlen="1048576" mindevlen="0" headerpassthru="true" />
+      <connprofile type="connprofiletcpipHTTPClient" rport="443" ripaddress="api-cas-demo.rnd.gemaltodigitalbankingidcloud.com" maxconns="-1" freeconnsmax="20" maxqueuedmsgs="0" />
+    </route>
+    <linkHeader type="wsapi-header2" enabled="true" enableSecCtx="false" nameValueVectorMode="true" />
+  </channel>
+  <channel type="ep-model-channel" inboundRateLimit="-1" sessionLimit="-1" outboundRateLimit="-1" includedInSPM="true" messageLimit="1000" id="cvv2_soap_sim" group="Interchanges" warningRate="1000" routingMode="SAME ROUTE" messageOrdering="false" alarmOnChannelDown="false" >
+    <route type="ICEXSHTTPClientRoute" switchPort="8048" enabled="true" mode="BIDIRECTIONAL" connectionRouting="true" responseTimer="6000" ctrlHdr="WSAPI" ctrlHdrDirection="BOTH" enableWebServices="false" >
+      <harouter id="1" />
+      <devprotocol type="devprotocolhttpclient-v3" contenttype="text/xml; charset=utf-8" requesturi="/" method="POST" sendrqack="ONRESPONSE" maxdevlen="1048576" mindevlen="0" headerpassthru="true" credId="elid" />
+      <connprofile type="connprofiletcpipHTTPClient" rport="12003" ripaddress="127.0.0.1" maxconns="-1" freeconnsmax="20" maxqueuedmsgs="0" />
+    </route>
+    <linkHeader type="wsapi-header2" enabled="true" enableSecCtx="false" nameValueVectorMode="true" />
+  </channel>
+</node>

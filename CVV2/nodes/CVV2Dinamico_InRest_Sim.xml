@@ -1,0 +1,164 @@
+<node type="ep-model-generic" acquiringIssuing="Both" id="CVV2Dinamico_InRest_Sim" shareAliasTable="false" >
+  <metaData characterSet="ASCII" >
+    <messageType requestMessageType="rq" initiatingRequest="false" responseMessageType="rs" />
+    <fieldAttributeType attributeType="b" justification="Left" padding="0x30" lengthEncoding="Unpacked" lengthUnit="Default" packJustification="Left" packFill="0x0" />
+    <messageFieldName fieldId="Root" />
+  </metaData>
+  <protocol type="protocol-generic" messageFamily="GENERIC" payloadRoot="Root" fileFormat="false" >
+    <messageTypeAssignment sourceExpr="&apos;rq&apos;" sourceAsString="false" target="ctx.message_type" />
+    <supportedMessageTypes enabled="true" direction="Inbound" messageType="rq" />
+    <supportedMessageTypes enabled="true" direction="Outbound" messageType="rs" />
+    <defaultField type="simple-field" attribute="b" lengthType="Variable" length="-1" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="Root" enabled="true" rawProcessingRequired="false" />
+    <correlationRules multipleAliases="false" >
+      <alias enabled="true" aliasId="trx_alias" >
+        <field fieldId="bytesToHex(ctx.wsapi.correlator)" length="56" justification="Left" pad="0x30" />
+      </alias>
+      <aliasSelector enabled="true" messageTypes="*" direction="*" aliasId="trx_alias" />
+    </correlationRules>
+    <rules >
+      <endpointMsgRuleset enabled="true" direction="Inbound" messageTypes="rq" script="saved.ext = fromXML(ext.Root)" />
+    </rules>
+  </protocol>
+  <sessions >
+    <session type="network-management-v3" name="Endpoint Session" triggerCheckTimer="5000" >
+      <messageTypeAssignment sourceExpr="&apos;rs&apos;" sourceAsString="false" target="ctx.message_type" />
+      <function type="peer-nw-function" enabled="true" name="Response successful" timeout="10" precondition="saved.ext.AuthenticationRequest.OTP != &apos;826&apos; &amp;&amp; saved.ext.AuthenticationRequest.OTP != &apos;422&apos; &amp;&amp; saved.ext.AuthenticationRequest.OTP != &apos;123&apos;" sendResponseExpr="return 1" >
+        <requestScript><![CDATA[saved.wsapi.correlator = ctx.wsapi.correlator
+return 1]]></requestScript>
+        <responseScript><![CDATA[ctx.wsapi.rri = 1
+ctx.wsapi.correlator ?= saved.wsapi.correlator
+ctx.wsapi.http_status_code = 200
+ext.Root = "<AuthenticationResponse>\n" +
+                "    <EmvTokenData/>\n" +
+                "    <EmvUserData/>\n" +
+                "    <UserID>testLiverpool</UserID>\n" +
+                "    <ObtToken>75432465465161654</ObtToken>\n" +
+                "    <AuthenticationDate>2023-10-12 22:25:35.664 +0000</AuthenticationDate>\n" +
+                "</AuthenticationResponse>"
+return 1]]></responseScript>
+      </function>
+      <function type="peer-nw-function" enabled="true" name="Invalid OTP" timeout="10" sendResponseExpr="return 1" >
+        <precondition><![CDATA[saved.ext.AuthenticationRequest.OTP == '826' ]]></precondition>
+        <requestScript><![CDATA[saved.wsapi.correlator = ctx.wsapi.correlator
+return 1]]></requestScript>
+        <responseScript><![CDATA[ctx.wsapi.rri = 1
+ctx.wsapi.correlator ?= saved.wsapi.correlator
+ctx.wsapi.http_status_code = 401
+ext.Root = "<html>\n" +
+                "<head>\n" +
+                "    <title>\n" +
+                "        Ezio CAS\n" +
+                "        7.16.0:\n" +
+                "        Server Error</title>\n" +
+                "    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n" +
+                "    <!-- Disable cache -->\n" +
+                "    <meta http-equiv=\"Pragma\" content=\"no-cache\">\n" +
+                "    <meta http-equiv=\"Cache-Control\" content=\"no-cache\">\n" +
+                "    <meta http-equiv=\"expires\" content=\"0\">\n" +
+                "    <link href=\"/cas/inc/css/admin_portal.css\" rel=\"stylesheet\" type=\"text/css\">\n" +
+                "    <!--[if IE]>\n" +
+                "<style>\n" +
+                "    .ie-margins {\n" +
+                "\n" +
+                "        margin-top: -100px;\n" +
+                "\n" +
+                "        margin-left: -250px;\n" +
+                "\n" +
+                "    }\n" +
+                "</style>\n" +
+                "<![endif]-->\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "    <!-- <ErrorMsg>20002: Invalid OTP.</ErrorMsg> -->\n" +
+                "    <div class=\"not-ready ie-margins\">\n" +
+                "        <img id=\"logo\" src=\"/cas/img/ezio_logo.png\" width=\"176\" height=\"35\" alt=\"EZIOCAS\">\n" +
+                "        <div class=\"line\"></div>\n" +
+                "        <div id=\"status\">\n" +
+                "            <h2>\n" +
+                "                Server Error 401\n" +
+                "            </h2>\n" +
+                "            20002: Invalid OTP.\n" +
+                "        </div>\n" +
+                "    </div>\n" +
+                "    <div id=\"maintenance-img\"></div>\n" +
+                "</body>\n" +
+                "</html>"
+return 1]]></responseScript>
+      </function>
+      <function type="peer-nw-function" enabled="true" name="Timeout" timeout="30" precondition="saved.ext.AuthenticationRequest.OTP == &apos;422&apos;" sendResponseExpr="return 1" >
+        <requestScript><![CDATA[saved.wsapi.correlator = ctx.wsapi.correlator
+return 1]]></requestScript>
+        <responseScript><![CDATA[ctx.wsapi.rri = 1
+ctx.wsapi.correlator ?= saved.wsapi.correlator
+ctx.wsapi.http_status_code = 200
+ext.Root = "<AuthenticationResponse>\n" +
+                "    <EmvTokenData/>\n" +
+                "    <EmvUserData/>\n" +
+                "    <UserID>testLiverpool</UserID>\n" +
+                "    <ObtToken>75432465465161654</ObtToken>\n" +
+                "    <AuthenticationDate>2023-10-12 22:25:35.664 +0000</AuthenticationDate>\n" +
+                "</AuthenticationResponse>"
+execProcess('sleep30','')
+return 1]]></responseScript>
+      </function>
+      <function type="peer-nw-function" enabled="true" name="Invalid OTP Error HTTP 409" timeout="10" sendResponseExpr="return 1" >
+        <precondition><![CDATA[saved.ext.AuthenticationRequest.OTP == '123' ]]></precondition>
+        <requestScript><![CDATA[saved.wsapi.correlator = ctx.wsapi.correlator
+return 1]]></requestScript>
+        <responseScript><![CDATA[ctx.wsapi.rri = 1
+ctx.wsapi.correlator ?= saved.wsapi.correlator
+ctx.wsapi.http_status_code = 409
+ext.Root = "<html>\n" +
+                "<head>\n" +
+                "    <title>\n" +
+                "        Ezio CAS\n" +
+                "        7.16.0:\n" +
+                "        Server Error</title>\n" +
+                "    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n" +
+                "    <!-- Disable cache -->\n" +
+                "    <meta http-equiv=\"Pragma\" content=\"no-cache\">\n" +
+                "    <meta http-equiv=\"Cache-Control\" content=\"no-cache\">\n" +
+                "    <meta http-equiv=\"expires\" content=\"0\">\n" +
+                "    <link href=\"/cas/inc/css/admin_portal.css\" rel=\"stylesheet\" type=\"text/css\">\n" +
+                "    <!--[if IE]>\n" +
+                "<style>\n" +
+                "    .ie-margins {\n" +
+                "\n" +
+                "        margin-top: -100px;\n" +
+                "\n" +
+                "        margin-left: -250px;\n" +
+                "\n" +
+                "    }\n" +
+                "</style>\n" +
+                "<![endif]-->\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "    <!-- <ErrorMsg>: Invalid OTP.</ErrorMsg> -->\n" +
+                "    <div class=\"not-ready ie-margins\">\n" +
+                "        <img id=\"logo\" src=\"/cas/img/ezio_logo.png\" width=\"176\" height=\"35\" alt=\"EZIOCAS\">\n" +
+                "        <div class=\"line\"></div>\n" +
+                "        <div id=\"status\">\n" +
+                "            <h2>\n" +
+                "                Server Error 401\n" +
+                "            </h2>\n" +
+                "            : Invalid OTP.\n" +
+                "        </div>\n" +
+                "    </div>\n" +
+                "    <div id=\"maintenance-img\"></div>\n" +
+                "</body>\n" +
+                "</html>"
+return 1]]></responseScript>
+      </function>
+      <check enabled="true" direction="*" messageTypes="*" />
+      <status enabled="true" criteria="true" state="0" />
+    </session>
+    <sessionSelector enabled="true" messageTypes="*" direction="*" session="Endpoint Session" />
+  </sessions>
+  <channel type="ep-model-channel" inboundRateLimit="-1" sessionLimit="-1" outboundRateLimit="-1" includedInSPM="true" messageLimit="1000" id="sim_cvv_channel" group="Interchanges" warningRate="1000" routingMode="SAME ROUTE" messageOrdering="false" alarmOnChannelDown="false" >
+    <route type="ICEXSHTTPServerRoute" switchPort="7072" enabled="true" mode="BIDIRECTIONAL" connectionRouting="true" responseTimer="6000" ctrlHdr="WSAPI" enableWebServices="false" >
+      <devprotocol type="devprotocolhttpserver-v3" persistentconnections="true" authtype="NONE" passthru="PAYLOAD" ticketexpiry="900" maxdevlen="1048576" mindevlen="0" headerpassthru="true" _httpRspContentType="text/xml; charset=utf-8" />
+      <connprofile type="connprofiletcpipHTTPServer" contretrytimer="300" initretry="5" initretrytimer="20" lport="12003" maxconns="-1" />
+    </route>
+    <linkHeader type="wsapi-header2" enabled="true" enableSecCtx="false" nameValueVectorMode="true" />
+  </channel>
+</node>

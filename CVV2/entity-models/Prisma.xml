@@ -1,0 +1,743 @@
+<entity-model id="Prisma" prefix="com.prisma" linked="Prisma" >
+  <entity type="rdbms-log" displayName="Log corresponsales bancarios" id="ent_logs" emfProvision="false" dualControl="false" wanReplicationMode="ASYNC" abstract="false" unique="false" unifiedView="false" partitionsAhead="4" blockSize="-1" interval="Generated" timeOfDay="0:0:0" offload="false" offloadNRT="false" recoveryBlocksize="100" recoveryInterval="100" crudPanel="true" crudReadOnly="true" freesort="true" expanded="false" expandedLimit="100" parallelInsert="true" cleanupAfterAuth="false" retention="7d" partitionSize="Generated" >
+    <property displayName="SECONDARY MAC" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="secondary_mac" fieldType="String" size="16" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="STATEMENT PRINT DATA" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="statement_print_data" fieldType="String" size="380" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DEPOSIT TYPE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="deposit_type" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DEPOSIT CREDIT AMOUNT" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="deposit_credit_amount" fieldType="String" size="20" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CARD ISSUER ID CODE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="card_isuer_id_code" fieldType="String" size="15" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="ACCOUNT ID 2" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="account_id2" fieldType="String" size="30" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="ACCOUNT ID 1" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="account_id1" fieldType="String" size="30" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="RECEIVING INSTITUTION ID CODE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="receiving_inst_id_code" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="PRIMARY MAC" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="primary_mac" fieldType="String" size="8" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="PIN OFFSET" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="pin_offset" fieldType="String" size="45" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CARD ISSUER AUTH DATA" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="card_issuer_auth_data" fieldType="String" size="25" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="TERMINAL DATA" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="terminal_data" fieldType="String" size="15" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="ADDITIONAL AMOUNTS" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="additional_amounts" fieldType="String" size="15" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="TRANSACTION CURRENCY CODE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="transaction_currency_code" fieldType="String" size="3" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="ADDITIONAL RESPONSE DATA" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="additional_response_data" fieldType="String" size="27" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CARD ACCEPTOR TERMINAL ID" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="card_acceptor_terminal_id" fieldType="String" size="16" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="RESPONSE CODE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="response_code" fieldType="String" size="3" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="AUTHORIZATION IDENTIFICATION RESPONSE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="auth_id_response" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="REFERENCE NUMBER" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="reference_number" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="TRACK 2 DATA" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="track2_data" fieldType="String" size="30" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="ACQUIRER ID CODE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="acquirer_id_code" fieldType="String" size="11" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CAPTURE DATE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="capture_date" fieldType="String" size="4" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="SETTLEMENT DATE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="settlement_date" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="LOCAL TRANSACTION DATE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="local_transaction_date" fieldType="String" size="8" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="LOCAL TRANSACTION TIME" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="local_transaction_time" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="SISTEM TRACE AUDIT NUMBER" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="systems_trace_audit_number" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="TRANSMISSION DATE AND TIME" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="transmission_data_time" fieldType="String" size="20" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="AMOUNT" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="amount" fieldType="String" size="25" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="MTI" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="mti" fieldType="String" size="4" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="PROCESSING CODE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="processing_code" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="ACCOUNT NUMBER" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="account_number" fieldType="String" size="19" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="ACCOUNT TYPE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="account_type" fieldType="String" size="2" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="ADDRESS" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="address" fieldType="String" size="100" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="ALIAS" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="alias" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="AMOUNT NUMBER" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="amount_number" fieldType="String" size="20" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="BCRA" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="bcra" fieldType="String" size="4" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CARD_NUMBER" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="card_number" fieldType="String" size="20" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CBU" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cbu" fieldType="String" size="22" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CBU DESTINATION" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cbu_destination" fieldType="String" size="22" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CLIENT RESPONSE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="client_response" fieldType="String" size="1" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CODE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="code" fieldType="String" size="4" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CORRESPONDENT CODE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="correspondent_code" fieldType="String" size="4" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CUIT" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cuit" fieldType="String" size="11" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CURRENCY" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="currency" fieldType="String" size="3" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DATE HOUR" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="date_hour" fieldType="String" size="26" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DATE TIME" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="date_time" fieldType="String" size="30" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DOCUMENT NUMBER" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="document_number" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DOCUMENT TYPE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="document_type" fieldType="String" size="4" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="FIID" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="fiid" fieldType="String" size="4" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="IP" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="ip" fieldType="String" size="16" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="ENTRY MODE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="entry_mode" fieldType="String" size="80" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="STATE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="state" fieldType="String" size="3" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="TRACK 1" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="track1" fieldType="String" size="40" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="TRACK 2" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="track2" fieldType="String" size="80" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="TERMINAL" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="terminal" fieldType="String" size="20" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="TERMINAL SERIAL NUMBER" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="terminal_serial_number" fieldType="String" size="16" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="VIRTUAL CARD" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="virtual_card" fieldType="String" size="18" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="NAME" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="name" fieldType="String" size="80" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CRYPTOGRAM" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cryptogram" fieldType="String" size="80" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="ZIP CODE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="zip_code" fieldType="String" size="10" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="token_xc" fieldType="String" size="100" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="token_re" fieldType="String" size="100" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="token_rp" fieldType="String" size="100" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="token_q4" fieldType="String" size="100" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="token_p1" fieldType="String" size="100" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="token_p2" fieldType="String" size="100" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="token_pc" fieldType="String" size="100" precision="0" scale="0" filterMandatory="false" />
+    <operation type="insert" id="insert" realtime="true" useTable="false" ignoreDuplicate="false" />
+    <operation type="select" id="busqueda_consulta_titular" realtime="true" selectGroup="AND" useTable="false" key="key" maxRows="50" ignoreCache="false" >
+      <selector name="mti" operator="eq" />
+      <selector name="local_transaction_date" operator="eq" />
+      <selector name="systems_trace_audit_number" operator="eq" />
+      <selector name="ip" operator="eq" />
+    </operation>
+    <key type="log" property1="local_transaction_date" property2="ip" property3="mti" property4="systems_trace_audit_number" property5="card_acceptor_terminal_id" name="key" scope="rt" />
+  </entity>
+  <entity type="Component Entity" displayName="Error Codes" description="Error Codes" id="ent_error_codes" plugin="true" >
+    <property fieldType="String" displayName="Error Autorizador" mandatory="false" name="error_aut" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Error WebServices" mandatory="false" name="error_ws" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Estado de la Transaccion" mandatory="false" name="error_est" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Descripcion del Error" mandatory="false" name="error_desc" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Servicio" mandatory="false" name="error_service" multiList="false" multi="false" />
+    <key type="component" property1="error_aut" />
+  </entity>
+  <entity type="rdbms-log" displayName="Log Transaccional VTS" description="Log Transaccional VTS" id="ent_vts_log" emfProvision="false" dualControl="false" wanReplicationMode="ASYNC" abstract="false" unique="false" unifiedView="false" partitionsAhead="4" blockSize="-1" interval="Generated" timeOfDay="0:0:0" offload="false" offloadNRT="false" recoveryBlocksize="100" recoveryInterval="100" crudPanel="true" crudReadOnly="true" freesort="true" expanded="false" expandedLimit="100" parallelInsert="true" cleanupAfterAuth="false" retention="30d" partitionSize="Generated" >
+    <property displayName="PRIMARY ACCOUNT NUMBER" mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="STANDARD" sensitivityLevel="20" roleCompControl="PAN Role Protection" compressed="false" name="pan" fieldType="String" size="20" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <property displayName="MTI" mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="tipo_operacion" fieldType="String" size="4" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CODIGOTRX" mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="processing_code" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="FECHATRANS" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="date_time" fieldType="String" size="10" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="STAN" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="stan" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="RRN" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="rrn" fieldType="String" size="11" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="UUID" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="issuercard_reference_id" fieldType="String" size="60" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="MERCHANTTYPE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="merchant_type" fieldType="String" size="40" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="ACQCNTRYCODE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="acq_country_code" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="POSENTRYMODE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="pos_entry_mode" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="POSCONDITIONCODE" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="pos_condition_code" fieldType="String" size="10" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="ACQUIRERID" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="acquirer_id" fieldType="String" size="10" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="ACTIONCODEINT" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="code_internal" fieldType="String" size="10" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="ACTIONCODEEXT" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="code_external" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="TERMID" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="term_id" fieldType="String" size="16" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CARDACCPTID" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="card_acceptor_id" fieldType="String" size="16" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="NAMELOC" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="name_loc" fieldType="String" size="40" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="trx_currency" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DESCRIPTION" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="code_description" fieldType="String" size="100" precision="0" scale="0" filterMandatory="false" />
+    <operation type="insert" id="insert" realtime="true" useTable="false" ignoreDuplicate="false" />
+    <operation type="select" id="select_uuid" realtime="true" selectGroup="AND" useTable="false" key="key" maxRows="1" ignoreCache="false" >
+      <selector name="pan" operator="eq" />
+      <selector name="code_external" operator="eq" />
+    </operation>
+    <key type="log" property1="pan" property2="code_external" property3="processing_code" property4="tipo_operacion" name="key" scope="rt" />
+  </entity>
+  <entity type="rdbms-log" displayName="Log Preautorizaciones" description="Entidad  para logs de Preautorizaciones" id="ent_logs_preauth" emfProvision="false" dualControl="false" wanReplicationMode="ASYNC" abstract="false" unique="false" unifiedView="false" partitionsAhead="4" blockSize="-1" interval="Generated" timeOfDay="0:0:0" offload="true" offloadNRT="true" recoveryBlocksize="100" recoveryInterval="100" crudPanel="true" crudReadOnly="true" freesort="false" expanded="false" expandedLimit="100" parallelInsert="true" cleanupAfterAuth="false" retention="60d" partitionSize="Generated" >
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="mti" fieldType="String" size="4" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="processing_code" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="STANDARD" sensitivityLevel="40" roleCompControl="PAN &apos;At-Rest&apos; Protection" compressed="false" name="pan" fieldType="String" size="19" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="importe" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="rrn" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="id_terminal" fieldType="String" size="8" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="id_comercio" fieldType="String" size="15" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cuotas_datos_orig" fieldType="String" size="3" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="currency_code" fieldType="String" size="3" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="num_ticket" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="descripcion_respuesta" fieldType="String" size="150" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="respuesta_cod" fieldType="String" size="11" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="channel" fieldType="String" size="4" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="audit_date" fieldType="autotscreate" size="0" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="stan" fieldType="String" size="10" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="modulo" fieldType="String" size="1" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <operation type="insert" id="insert" realtime="true" useTable="false" ignoreDuplicate="false" />
+    <operation type="select" id="select" realtime="true" selectGroup="AND" useTable="false" key="key" maxRows="50" ignoreCache="false" >
+      <selector name="mti" operator="eq" />
+      <selector name="processing_code" operator="eq" />
+      <selector name="pan" operator="eq" />
+    </operation>
+    <key type="log" property1="mti" property2="processing_code" property3="pan" property4="stan" name="key" scope="rt" />
+  </entity>
+  <entity type="Component Entity" displayName="Ruteo de canales" description="Ruteo de canales por modulo origen" id="ent_routing" plugin="true" pluginDisplayName="Routing" >
+    <property fieldType="String" displayName="Routing ID" mandatory="true" name="id" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Modulo Origen" mandatory="true" name="mod_origen" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Channel" mandatory="false" name="channel" multiList="false" multi="false" />
+    <key type="component" property1="id" />
+  </entity>
+  <entity type="rdbms-log" displayName="Log Transaccional GB" description="Entidad para las transacciones de currency rate" id="ent_gb_log" emfProvision="false" dualControl="false" wanReplicationMode="ASYNC" abstract="false" unique="false" unifiedView="false" partitionsAhead="4" blockSize="-1" interval="Generated" timeOfDay="0:0:0" offload="false" offloadNRT="false" recoveryBlocksize="100" recoveryInterval="100" crudPanel="true" crudReadOnly="true" freesort="false" expanded="false" expandedLimit="100" parallelInsert="true" cleanupAfterAuth="false" retention="3d" partitionSize="Generated" >
+    <property displayName="MTI" description="FMTI" mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="mti" fieldType="int" size="4" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CODIGOTRX" description="F3" mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="processing_code" fieldType="int" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="PAN" description="F2" mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="STANDARD" sensitivityLevel="10" compressed="false" name="pan" fieldType="String" size="25" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="MONTOTRX" description="F4" mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="monto_trx" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="FECHATRX" description="F7" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="transmission_date_time" fieldType="String" size="10" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="STAN" description="F11" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="stan" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DATETIMETRX" description="F12" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="date_time_local_trx" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="ACQUIRERID" description="F32" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="acquirer_id" fieldType="String" size="15" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CARDACCTERMINALID" description="F41" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="card_acc_ter_id" fieldType="String" size="16" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CardAcceptorIdCode" description="F42" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="card_acc_id_code" fieldType="String" size="15" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CurrencyCode" description="F49" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="currency_trx" fieldType="String" size="3" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="RRN" description="F37" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="rrn" fieldType="String" size="12" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <property displayName="ACTIONCODE" description="F38" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="action_code" fieldType="String" size="4" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DCCConvAmount" description="62-3" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="dcc_con_amount" fieldType="String" size="16" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DCCExcRate" description="62-4" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="dcc_exc_rate" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DCCHostRefID" description="62-5" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="dcc_host_id" fieldType="String" size="32" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DCCCardType" description="63-6" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="dcc_card_type" fieldType="String" size="3" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DCCInvertedRate" description="62-8" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="dcc_inv_rate" fieldType="String" size="16" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DCCForeignCurrencyCode" description="62-9" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="dcc_foreign_code" fieldType="String" size="3" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DCCPercentMarkup" description="62-10" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="dcc_percent_markup" fieldType="String" size="15" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DCCCommissionCurrencyNumber" description="62-11" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="dcc_comision_curr_num" fieldType="String" size="4" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DCCCommissionAmount" description="62-12" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="dcc_com_monto" fieldType="String" size="16" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DCCForeignMerchantID" description="62-13" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="dcc_for_merchant" fieldType="String" size="35" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DCCForeignTerminalID" description="62-14" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="dcc_for_terminal" fieldType="String" size="16" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="DCCForeignNumberRate" description="62.15" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="dcc_for_rate" fieldType="String" size="20" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="codigo_respuesta" fieldType="String" size="10" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="descripcion_respuesta" fieldType="String" size="200" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="date_audit" fieldType="autotscreate" size="0" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="dcc_code_response" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <operation type="insert" id="insert" realtime="true" useTable="false" ignoreDuplicate="false" />
+    <key type="log" property1="pan" property2="mti" property3="processing_code" name="key" scope="rt" />
+  </entity>
+  <entity type="rdbms-standard" displayName="Card Generic Data" id="ent_card_generic" emfProvision="false" dualControl="false" wanReplicationMode="ASYNC" abstract="false" unique="false" unifiedView="false" offload="false" offloadNRT="false" recoveryBlocksize="100" recoveryInterval="100" cacheEnabled="false" cacheExpiryTime="-1" maxCacheEntries="100" crudPanel="true" crudReadOnly="false" freesort="true" expanded="false" expandedLimit="100" parallelInsert="false" cleanupAfterAuth="false" includeShardOwner="false" >
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="id" fieldType="String" size="10" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="banco_fiid" fieldType="String" size="10" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="tipo_cuenta" fieldType="String" size="5" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cuenta" fieldType="String" size="25" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="tarjeta_virtual" fieldType="String" size="37" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="td_titularidad" fieldType="String" size="20" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="tipo_documento" fieldType="String" size="5" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="documento" fieldType="String" size="15" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="ambiente" fieldType="String" size="5" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cbu" fieldType="String" size="25" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="nombre_titular" fieldType="String" size="70" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cuit1" fieldType="String" size="30" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cuit2" fieldType="String" size="30" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cuit3" fieldType="String" size="30" precision="0" scale="0" filterMandatory="false" />
+    <operation type="select" id="parameters" realtime="true" selectGroup="AND" useTable="false" key="key" maxRows="1" ignoreCache="false" >
+      <selector name="id" operator="eq" />
+    </operation>
+    <key type="rdbms" name="key" unique="true" scope="rt" property1="id" />
+  </entity>
+  <entity type="rdbms-log" displayName="Log Consulta Titularidad" id="ent_log_titularidad" emfProvision="false" menuHierarchy="/Logs/Transferencias" dualControl="false" wanReplicationMode="ASYNC" abstract="false" unique="false" unifiedView="false" partitionsAhead="4" blockSize="-1" interval="Generated" timeOfDay="0:0:0" offload="false" offloadNRT="true" recoveryBlocksize="100" recoveryInterval="100" crudPanel="true" crudReadOnly="true" freesort="true" expanded="false" expandedLimit="100" parallelInsert="true" cleanupAfterAuth="false" retention="7d" partitionSize="Generated" >
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="num_cbu" fieldType="String" size="30" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cod_resultado" fieldType="String" size="15" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="descripcion_resultado" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="reference_number" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cuit" fieldType="String" size="30" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="nombre_titular" fieldType="String" size="64" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="tipo_cuenta" fieldType="String" size="5" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="num_cuenta" fieldType="String" size="30" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="audit_date" fieldType="String" size="25" precision="0" scale="0" filterMandatory="false" />
+    <operation type="insert" id="insert" realtime="true" useTable="false" ignoreDuplicate="false" />
+    <key type="log" property1="num_cbu" property2="reference_number" name="key" scope="rt" />
+  </entity>
+  <entity type="rdbms-log" displayName="Log Transferencias" id="ent_log_transferencias" emfProvision="false" dualControl="false" wanReplicationMode="ASYNC" abstract="false" unique="false" unifiedView="false" partitionsAhead="4" blockSize="-1" interval="Generated" timeOfDay="0:0:0" offload="true" offloadNRT="true" recoveryBlocksize="100" recoveryInterval="100" crudPanel="true" crudReadOnly="true" freesort="false" expanded="false" expandedLimit="100" parallelInsert="true" cleanupAfterAuth="false" retention="30d" partitionSize="Generated" >
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="otp" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="monto" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="moneda" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cod_respuesta" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="desc_respuesta" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="estado" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="tipo_transaccion" fieldType="String" size="50" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="audit_date" fieldType="autotsupdate" size="0" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="administrator" fieldType="String" size="50" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="wallet_name" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="wallet_idnumber" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="acquirer_name" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="acquirer_idnumber" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="informed_account_from_cbu" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="informed_account_to_cbu" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="informed_account_from_name" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="informed_account_from_idnumber" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="user_document_type" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="user_document_number" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="informed_account_to_idnumber" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="informed_account_to_name" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="real_account_to_cbu" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="real_account_to_name" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="real_account_to_idnumber" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="real_account_from_cbu" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="real_account_from_idnumber" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="real_account_from_name" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="reference_number" fieldType="String" size="50" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="tokens_response" fieldType="String" compositeType="JSON" size="3000" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="qr_id" fieldType="String" size="100" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="authorization_code" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="0" maxWidth="0" minHeight="0" maxHeight="0" visible="false" readonly="false" protectionMode="STANDARD" sensitivityLevel="20" roleCompControl="PAN &apos;At-Rest&apos; Protection" compressed="false" name="original" fieldType="String" size="3000" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="0" maxWidth="0" minHeight="0" maxHeight="0" visible="false" readonly="false" protectionMode="STANDARD" sensitivityLevel="20" roleCompControl="PAN &apos;At-Rest&apos; Protection" compressed="false" name="header" fieldType="String" size="3000" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="reqoriginal" fieldType="String" size="3000" precision="0" scale="0" filterMandatory="false" />
+    <operation type="insert" id="insertar" realtime="true" useTable="false" ignoreDuplicate="false" />
+    <operation type="select" id="busori" realtime="true" selectGroup="AND" useTable="false" key="orig" maxRows="1" ignoreCache="false" >
+      <selector name="reference_number" operator="eq" />
+      <selector name="authorization_code" operator="eq" />
+      <selector name="administrator" operator="eq" />
+      <selector name="estado" operator="eq" />
+    </operation>
+    <operation type="select" id="duplicado" realtime="true" selectGroup="AND" useTable="false" key="orig" maxRows="1" ignoreCache="false" >
+      <selector name="reference_number" operator="eq" />
+      <selector name="qr_id" operator="eq" />
+      <selector name="authorization_code" operator="eq" />
+      <selector name="tipo_transaccion" operator="eq" />
+      <selector name="administrator" operator="eq" />
+      <selector name="estado" operator="eq" />
+    </operation>
+    <key type="log" property1="authorization_code" property2="otp" property3="qr_id" property4="reference_number" name="trf_key" scope="rt" />
+    <key type="log" property1="reference_number" property2="authorization_code" property3="qr_id" property4="administrator" name="orig" scope="rt" />
+  </entity>
+  <entity type="rdbms-log" displayName="Log Genera OTP" id="ent_log_otp" emfProvision="false" dualControl="false" wanReplicationMode="ASYNC" abstract="false" unique="false" unifiedView="false" partitionsAhead="4" blockSize="-1" interval="Generated" timeOfDay="0:0:0" offload="false" offloadNRT="false" recoveryBlocksize="100" recoveryInterval="100" crudPanel="true" crudReadOnly="true" freesort="true" expanded="false" expandedLimit="100" parallelInsert="true" cleanupAfterAuth="false" retention="5m" partitionSize="Generated" >
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="id_qr" fieldType="String" size="15" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="monto" fieldType="String" size="13" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cuit" fieldType="String" size="25" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cbu" fieldType="String" size="25" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="num_documento" fieldType="String" size="15" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="codigo_otp" fieldType="String" size="20" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="fecha_expiracion" fieldType="String" size="25" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="estado" fieldType="String" size="1" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="audit_date" fieldType="String" size="25" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="expiracion_long" fieldType="String" size="20" precision="0" scale="0" filterMandatory="false" />
+    <operation type="insert" id="insert" realtime="true" useTable="false" ignoreDuplicate="false" />
+    <operation type="select" id="busqueda_otp" realtime="true" selectGroup="AND" useTable="false" key="key" maxRows="1" ignoreCache="false" >
+      <selector name="id_qr" operator="eq" />
+      <selector name="cbu" operator="eq" />
+    </operation>
+    <operation type="select" id="check_otp" realtime="true" selectGroup="AND" useTable="false" key="key_otp" maxRows="50" ignoreCache="false" >
+      <selector name="codigo_otp" operator="eq" />
+    </operation>
+    <key type="log" property1="id_qr" property2="cbu" name="key" scope="rt" />
+    <key type="log" property1="codigo_otp" name="key_otp" scope="rt" />
+  </entity>
+  <entity type="Component Entity" displayName="ScriptsRepository" id="ScriptsRepository" plugin="false" >
+    <staticScripts type="static-script" name="ValidaOTP" description="Valida Si la OTP Existe y es valida" >
+      <inputParams name="idQr" parameterType="String" array="false" />
+      <inputParams name="cbu" parameterType="String" array="false" />
+      <inputParams name="otp" parameterType="String" array="false" />
+      <outputParam parameterType="boolean" array="false" />
+      <script><![CDATA[def result = false
+com.prisma.ent_log_otp.op.busqueda_otp valida = new com.prisma.ent_log_otp.op.busqueda_otp
+valida.id_qr = idQr
+valida.cbu = cbu
+def datos = queryDatabaseOperation(valida)
+if(size(datos)>0){
+  if(datos[0].codigo_otp == otp){
+    def expiracion = datos[0].expiracion_long as long
+    def validacion = expiracion - timestamp()
+    if(validacion > 0){
+      result = true
+    }
+  }
+}
+return result]]></script>
+    </staticScripts>
+    <staticScripts type="static-script" name="SeparaTokenPK" description="Separa los campos internos del TokenPK y los entrega como un composite" >
+      <inputParams name="TokenPK" parameterType="String" array="false" />
+      <outputParam parameterType="Composite" array="false" />
+      <script><![CDATA[tokenPK.TipoDoc = substring(TokenPK, 0, 1)//sess.assigments.transferencias.webservice.user.document.type//sess.assigments.cardParameters.tipoDocumento
+tokenPK.NumDoc = substring(TokenPK, 1, 12)//padRight(sess.assigments.transferencias.webservice.user.document.number, 32, 12)//padRight(sess.assigments.cardParameters.documento, 32, 12)
+tokenPK.KeyVig = substring(TokenPK, 13, 1)//'0'
+tokenPK.Perfil = substring(TokenPK, 14, 2)//'00'
+tokenPK.TimeInput = substring(TokenPK, 16, 8)//'        '
+tokenPK.Clave3DS = substring(TokenPK, 24, 1)//' '
+tokenPK.RespConf = substring(TokenPK, 25, 1)//'0'
+tokenPK.BeufTrans = substring(TokenPK, 26, 1)//'0'
+tokenPK.BeufPagos = substring(TokenPK, 27, 1)//'0'
+tokenPK.DocOrig = substring(TokenPK, 28, 1)//' '
+tokenPK.Tran = substring(TokenPK, 29, 3)//'   '
+tokenPK.TranValDebin = substring(TokenPK, 32, 1)//' '
+tokenPK.AppOrig = substring(TokenPK, 33, 1)//'Z'
+tokenPK.TimeExit = substring(TokenPK, 34, 12)//'            '
+tokenPK.InvOnl = substring(TokenPK, 46, 1)//' '
+tokenPK.SxvMob = substring(TokenPK, 47, 1)//' '
+tokenPK.EmpTel = substring(TokenPK, 48, 1)//' '
+tokenPK.TcPmc = substring(TokenPK, 49, 1)//'N'
+tokenPK.DobleFactor = substring(TokenPK, 50, 1)//' '
+tokenPK.UsoHbar = substring(TokenPK, 51, 1)//' '
+tokenPK.IndDeu = substring(TokenPK, 52, 1)//'N'
+tokenPK.Responder = substring(TokenPK, 53, 1)//' '
+
+return tokenPK]]></script>
+    </staticScripts>
+    <staticScripts type="static-script" name="MapeaConceptoTransaccion" description="Mapea el campo transaction.concept del request de payments para TRF3.0" >
+      <inputParams name="concept" parameterType="String" array="false" />
+      <outputParam parameterType="String" array="false" />
+      <script><![CDATA[if (!isIn('PCT,CCT,ECT,DCT', concept) && //Tipos para TRF 3.0
+    !isIn('VAR', concept) && //Tipos para TRF Pull
+    !isIn('ALQ,CUO,EXP,FAC,PRE,SEG,HON,VAR,HAB,BRH,BRN,SON,ROP,SIS,APC,ESE', concept)){ //Tipos para TRF Push             
+  salida = '-'
+}else{
+  mapeo.PCT = 'K' //Pago con transferencia
+  mapeo.CCT = 'J' //Compra con transferencia
+  mapeo.ECT = 'N' //Extracción con transferencia
+  mapeo.DCT = 'L' //Devolucion con transferencia
+  
+  mapeo.ALQ = '1' //Alquileres
+  mapeo.CUO = '2' //Cuota
+  mapeo.EXP = '3' //Expensas
+  mapeo.FAC = '4' //Factura
+  mapeo.PRE = '5' //Prestamo
+  mapeo.SEG = '6' //Seguro
+  mapeo.HON = '7' //Honorarios
+  
+  mapeo.VAR = '8' //Transferencia Pull o Varios Push
+  
+  mapeo.HAB = '9' //Haberes
+  mapeo.BRH = 'C' //Bienes Registrables H
+  mapeo.BRN = 'D' //Bienes Registrables N
+  mapeo.SON = 'E' //Suscripción Obligatoria
+  mapeo.ROP = 'F' //Reintegro Obras
+  mapeo.SIS = 'G' //Siniestro de Seguros
+  mapeo.APC = 'H' //Aportes de Capital
+  mapeo.ESE = 'I' //Estado Expropiación
+  
+  salida = mapeo."${concept}"
+}]]></script>
+    </staticScripts>
+    <staticScripts type="static-script" name="SeparaTokenXL" description="Separa los campos internos del TokenXL y los entrega como un composite" >
+      <inputParams name="TokenXL" parameterType="String" array="false" />
+      <outputParam parameterType="Composite" array="false" />
+      <script><![CDATA[tokenXL.XLNombreTit = substring(TokenXL, 0, 64)
+tokenXL.XLCuit1 = substring(TokenXL, 64, 11)
+tokenXL.XLCuit2 = substring(TokenXL, 75, 11)
+tokenXL.XLCuit3 = substring(TokenXL, 86, 11)
+tokenXL.XLBcoDest = substring(TokenXL, 97, 22)
+tokenXL.XLBcoOrig = substring(TokenXL, 119, 4)
+tokenXL.XLUserFld = substring(TokenXL, 123, 7)
+
+return tokenXL]]></script>
+    </staticScripts>
+    <staticScripts type="static-script" name="LogErrorRest" description="Registra en Log errores de Validaciones en Endpoint Rest" >
+      <inputParams name="i" description="Contador" parameterType="int" array="false" />
+      <outputParam parameterType="boolean" array="false" />
+      <script><![CDATA[if(??error.errors[i].code){
+  def errorMap = config().com.prisma.ent_error_trf.plugin.entry.find('error_from', error.errors[i].code)
+  if(??errorMap && substring(errorMap.error_to, 0, 1) == 'U'){
+    com.prisma.ent_log_errors_rest.op.insert insert = new com.prisma.ent_log_errors_rest.op.insert
+    insert.error_code = errorMap.error_to
+    insert.error_desc = errorMap.description
+    insert.http_status_code = errorMap.http_status_code
+    insert.error_location = error.errors[i].location
+    insert.trace_id = ctx.wsapi.trace_id
+    addDatabaseOperation(insert)
+  }
+}
+return true]]></script>
+    </staticScripts>
+    <staticScripts type="static-script" name="SeparaTokenZO" description="Separa los campos internos del TokenZO y los entrega como un composite" >
+      <inputParams name="TokenZO" parameterType="String" array="false" />
+      <outputParam parameterType="Composite" array="false" />
+      <script><![CDATA[tokenZO.ZOAuthCode ?= substring(TokenZO, 0, 6)
+//tokenZO.ZOQrId ?= substring(TokenZO, 6, 6)
+tokenZO.ZOAdminName ?= substring(TokenZO, 12, 2)
+tokenZO.ZOTransfOrder ?= substring(TokenZO, 14, 1)
+tokenZO.ZOWalletName ?= substring(TokenZO, 15, 6)
+tokenZO.ZOWalletCuit ?= substring(TokenZO, 21, 11)
+tokenZO.ZOAdqName ?= substring(TokenZO, 32, 6)
+tokenZO.ZOAdqCuit ?= substring(TokenZO, 38, 11)
+tokenZO.ZOAcctInfCbu ?= substring(TokenZO, 49, 22)
+tokenZO.ZOAcctInfName ?= substring(TokenZO, 71, 23)
+tokenZO.ZOAcctInfCuit ?= substring(TokenZO, 94, 11)
+tokenZO.ZOAcctInfDocTyp ?= substring(TokenZO, 105, 1)
+tokenZO.ZOAcctInfDocNum ?= substring(TokenZO, 106, 8)
+tokenZO.ZOTerminalId ?= substring(TokenZO, 114, 6)
+
+return tokenZO]]></script>
+    </staticScripts>
+    <staticScripts type="static-script" name="MapeoCodigoRespuesta" description="Mapea los códigos de errores" >
+      <inputParams name="codigoError" parameterType="String" array="false" />
+      <outputParam parameterType="Composite" array="false" />
+      <script><![CDATA[def errorMap = config().com.prisma.ent_error_trf.plugin.entry.find('error_from', codigoError)
+
+if(!??errorMap || size(errorMap) < 1){
+  errorMap = config().com.prisma.ent_error_trf.plugin.entry.find('error_from', '999')
+}
+
+errorResp.status = errorMap.status
+errorResp.description = errorMap.description
+errorResp.code = errorMap.error_to
+errorResp.http_status_code = errorMap.http_status_code
+errorResp.error_from = errorMap.error_from
+
+return errorResp]]></script>
+    </staticScripts>
+    <staticScripts type="static-script" name="toUpperCase" description="Upper" script="return replaceChars(entrada, &quot;abcdefghijklmnopqrstuvwxyzñáàäâéèëêíìïîóòöôúùüûÑÁÀÄÂÉÈËÊÍÌÏÎÓÒÖÔÚÙÜÛ&quot;, &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZNAAAAEEEEIIIIOOOOUUUUNAAAAEEEEIIIIOOOOUUUU&quot;)" >
+      <inputParams name="entrada" description="entrada" parameterType="String" array="false" />
+      <outputParam parameterType="String" array="false" />
+    </staticScripts>
+    <staticScripts type="static-script" name="ValidaIdNumber" description="Valida si el array de idNumber es un número de máximo 11 caracteres" >
+      <inputParams name="idNumber" parameterType="String" array="true" />
+      <outputParam parameterType="boolean" array="false" />
+      <script><![CDATA[def result = false
+int cont = 0
+if(??idNumber){
+  for(int i=0 ; i<length(idNumber) ; i++){
+    if(!matches(idNumber[i], '[0-9]{11}')){
+      cont += 1
+      }
+    }
+    if(cont == 0){
+      result = true
+      }
+  }
+else{
+  result = true 
+}
+return result]]></script>
+    </staticScripts>
+  </entity>
+  <entity type="rdbms-standard" displayName="Informacion Bancos" id="ent_params_bancos" emfProvision="false" dualControl="false" wanReplicationMode="ASYNC" abstract="false" unique="false" unifiedView="false" offload="false" offloadNRT="false" recoveryBlocksize="100" recoveryInterval="100" cacheEnabled="false" cacheExpiryTime="-1" maxCacheEntries="100" crudPanel="true" crudReadOnly="false" freesort="true" expanded="false" expandedLimit="100" parallelInsert="false" cleanupAfterAuth="false" includeShardOwner="false" >
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="id" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="institucion" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="fiid" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="habilitada" fieldType="boolean" size="0" precision="0" scale="0" filterMandatory="false" >
+      <value name="NO" value="0" useNumberAsValue="false" display="N" multi="false" code="-1" />
+      <value name="SI" value="1" useNumberAsValue="false" display="S" multi="false" code="-1" />
+    </property>
+    <property mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="genera_otp" fieldType="boolean" size="0" precision="0" scale="0" filterMandatory="false" >
+      <value name="NO" value="0" useNumberAsValue="false" display="N" multi="false" code="-1" />
+      <value name="SI" value="1" useNumberAsValue="false" display="S" multi="false" code="-1" />
+    </property>
+    <property description="En segundos" mandatory="false" default="300" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="expiracion" fieldType="int" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="tipo" fieldType="String" size="15" precision="0" scale="0" filterMandatory="false" >
+      <value name="Alfanumerico" value="AN" useNumberAsValue="false" display="Alfanumerico" multi="false" code="-1" />
+      <value name="Numerico" value="N" useNumberAsValue="false" display="Numerico" multi="false" code="-1" />
+    </property>
+    <property mandatory="false" default="16" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="largo" fieldType="int" size="12" precision="0" scale="0" filterMandatory="false" />
+    <operation type="select" id="busqueda_fiid" realtime="true" selectGroup="AND" useTable="false" key="key" maxRows="50" ignoreCache="false" >
+      <selector name="id" operator="eq" />
+    </operation>
+    <key type="rdbms" name="key" unique="true" scope="rt" property1="id" />
+  </entity>
+  <entity type="rdbms-log" displayName="Log Reversos" id="ent_log_reversos" emfProvision="false" dualControl="false" wanReplicationMode="ASYNC" abstract="false" unique="false" unifiedView="false" partitionsAhead="4" blockSize="-1" interval="Generated" timeOfDay="0:0:0" offload="false" offloadNRT="true" recoveryBlocksize="100" recoveryInterval="100" crudPanel="true" crudReadOnly="true" freesort="true" expanded="false" expandedLimit="100" parallelInsert="true" cleanupAfterAuth="false" retention="30d" partitionSize="Generated" >
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cod_autorizacion" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="otp" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="orden_transferencia" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="monto" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="moneda" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cod_respuesta" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="desc_respuesta" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cbu_user" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="estado" fieldType="String" size="50" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="audit_date" fieldType="autotsupdate" size="0" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="wallet_name" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="wallet_idnumber" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="acquirer_name" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="acquirer_idnumber" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="informed_account_from_cbu" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="informed_account_to_cbu" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="informed_account_from_name" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="informed_account_from_idnumber" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="user_document_type" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="user_document_number" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="informed_account_to_idnumber" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="informed_account_to_name" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="real_account_to_cbu" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="real_account_to_name" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="real_account_to_idnumber" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="real_account_from_cbu" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="real_account_from_idnumber" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="real_account_from_name" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="reference_number" fieldType="String" size="50" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="qr_id" fieldType="String" size="100" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="administrator" fieldType="String" size="15" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <operation type="insert" id="insertar" realtime="true" useTable="false" ignoreDuplicate="false" />
+    <operation type="select" id="validar_duplicado" realtime="true" selectGroup="AND" useTable="false" key="trf_key" maxRows="1" ignoreCache="false" >
+      <selector name="cod_autorizacion" operator="eq" />
+      <selector name="reference_number" operator="eq" />
+      <selector name="administrator" operator="eq" />
+      <selector name="estado" operator="eq" />
+    </operation>
+    <key type="log" property1="cod_autorizacion" property2="reference_number" property3="qr_id" property4="administrator" name="trf_key" scope="rt" />
+  </entity>
+  <entity type="Component Entity" displayName="Parametros Generales TRF3.0" id="ent_parameters" plugin="true" pluginDisplayName="Parametros Generales TRF3.0" >
+    <property fieldType="String" displayName="Nombre Parametro" mandatory="false" name="name" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Valor" mandatory="false" name="value" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Descripcion" mandatory="false" name="description" multiList="false" multi="false" />
+    <key type="component" property1="name" />
+  </entity>
+  <entity type="Component Entity" displayName="Error Codes TRF3.0" id="ent_error_trf" plugin="true" pluginDisplayName="Error Codes TRF3.0" >
+    <property fieldType="String" displayName="Codigo Error" mandatory="false" name="error_from" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Codigo Respuesta" mandatory="false" name="error_to" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Descripcion" mandatory="false" name="description" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Estado" mandatory="false" name="status" multiList="false" multi="false" />
+    <property fieldType="String" displayName="ID" mandatory="false" default="size-89" name="id" multiList="false" multi="false" />
+    <property fieldType="String" displayName="HTTP Status Code" mandatory="false" name="http_status_code" multiList="false" multi="false" />
+    <key type="component" property1="id" />
+  </entity>
+  <entity type="rdbms-log" displayName="Log Errores Endpoint Rest" description="Entidad para guardar los errores en Endpoint Rest" id="ent_log_errors_rest" emfProvision="false" dualControl="false" wanReplicationMode="ASYNC" abstract="false" unique="false" unifiedView="false" partitionsAhead="4" blockSize="-1" interval="Generated" timeOfDay="0:0:0" offload="true" offloadNRT="true" recoveryBlocksize="100" recoveryInterval="100" crudPanel="true" crudReadOnly="true" freesort="true" expanded="false" expandedLimit="100" parallelInsert="true" cleanupAfterAuth="false" retention="7d" partitionSize="Generated" >
+    <property displayName="Codigo error" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="error_code" fieldType="String" size="5" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <property displayName="Descripcion" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="error_desc" fieldType="String" size="250" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Ubicacion" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="error_location" fieldType="String" size="100" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Codigo HTTP" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="http_status_code" fieldType="String" size="3" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="at_create" fieldType="autotscreate" size="20" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Trace ID" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="trace_id" fieldType="String" size="50" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <property displayName="URL" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="url" fieldType="String" size="250" precision="0" scale="0" filterMandatory="false" />
+    <operation type="insert" id="insert" description="insert" realtime="true" useTable="false" ignoreDuplicate="false" />
+    <key type="log" property1="trace_id" name="key_rest" scope="rt" />
+  </entity>
+  <entity type="rdbms-log" displayName="Log Preautorizaciones - Base24" description="Entidad  para logs de Preautorizaciones" id="ent_log_preauth_b24" emfProvision="false" dualControl="false" wanReplicationMode="ASYNC" abstract="false" unique="false" unifiedView="false" partitionsAhead="4" blockSize="-1" interval="Generated" timeOfDay="0:0:0" offload="true" offloadNRT="true" recoveryBlocksize="100" recoveryInterval="100" crudPanel="true" crudReadOnly="true" freesort="false" expanded="false" expandedLimit="100" parallelInsert="true" cleanupAfterAuth="false" retention="7d" partitionSize="Generated" >
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="mti" fieldType="String" size="4" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="processing_code" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="STANDARD" sensitivityLevel="40" roleCompControl="PAN &apos;At-Rest&apos; Protection" compressed="false" name="pan" fieldType="String" size="19" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="importe" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="rrn" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="id_terminal" fieldType="String" size="8" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="id_comercio" fieldType="String" size="15" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cuotas_datos_orig" fieldType="String" size="3" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="currency_code" fieldType="String" size="3" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="num_ticket" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="descripcion_respuesta" fieldType="String" size="150" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="respuesta_cod" fieldType="String" size="11" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="channel" fieldType="String" size="4" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="audit_date" fieldType="autotscreate" size="0" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="stan" fieldType="String" size="10" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="modulo" fieldType="String" size="1" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <operation type="insert" id="insert" realtime="true" useTable="false" ignoreDuplicate="false" />
+    <operation type="select" id="select" realtime="true" selectGroup="AND" useTable="false" key="key" maxRows="50" ignoreCache="false" >
+      <selector name="mti" operator="eq" />
+      <selector name="processing_code" operator="eq" />
+      <selector name="pan" operator="eq" />
+    </operation>
+    <key type="log" property1="mti" property2="processing_code" property3="pan" property4="stan" name="key" scope="rt" />
+  </entity>
+  <entity type="rdbms-log" displayName="Log Devoluciones" id="ent_log_devoluciones" emfProvision="false" dualControl="false" wanReplicationMode="ASYNC" abstract="false" unique="false" unifiedView="false" partitionsAhead="4" blockSize="-1" interval="Generated" timeOfDay="0:0:0" offload="true" offloadNRT="true" recoveryBlocksize="100" recoveryInterval="100" crudPanel="true" crudReadOnly="true" freesort="false" expanded="false" expandedLimit="100" parallelInsert="true" cleanupAfterAuth="false" retention="30d" partitionSize="Generated" >
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="otp" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="monto" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="moneda" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cod_respuesta" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="desc_respuesta" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="estado" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="tipo_transaccion" fieldType="String" size="50" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="audit_date" fieldType="autotsupdate" size="0" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="administrator" fieldType="String" size="50" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="wallet_name" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="wallet_idnumber" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="acquirer_name" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="acquirer_idnumber" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="informed_account_from_cbu" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="informed_account_to_cbu" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="informed_account_from_name" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="informed_account_from_idnumber" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="user_document_type" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="user_document_number" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="informed_account_to_idnumber" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="informed_account_to_name" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="real_account_to_cbu" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="real_account_to_name" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="real_account_to_idnumber" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="real_account_from_cbu" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="real_account_from_idnumber" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="real_account_from_name" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="reference_number" fieldType="String" size="50" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="tokens_response" fieldType="String" compositeType="JSON" size="3000" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="authorization_code" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="0" maxWidth="0" minHeight="0" maxHeight="0" visible="false" readonly="false" protectionMode="STANDARD" sensitivityLevel="20" roleCompControl="PAN &apos;At-Rest&apos; Protection" compressed="false" name="original" fieldType="String" size="3000" precision="0" scale="0" filterMandatory="false" />
+    <operation type="insert" id="insertar" realtime="true" useTable="false" ignoreDuplicate="false" />
+    <operation type="select" id="busori" realtime="true" selectGroup="AND" useTable="false" key="orig" maxRows="1" ignoreCache="false" >
+      <selector name="reference_number" operator="eq" />
+      <selector name="authorization_code" operator="eq" />
+      <selector name="administrator" operator="eq" />
+      <selector name="estado" operator="eq" />
+    </operation>
+    <operation type="select" id="duplicado" realtime="true" selectGroup="AND" useTable="false" key="orig" maxRows="1" ignoreCache="false" >
+      <selector name="reference_number" operator="eq" />
+      <selector name="authorization_code" operator="eq" />
+      <selector name="tipo_transaccion" operator="eq" />
+      <selector name="administrator" operator="eq" />
+      <selector name="estado" operator="eq" />
+    </operation>
+    <key type="log" property1="authorization_code" property2="otp" property3="reference_number" name="trf_key" scope="rt" />
+    <key type="log" property1="reference_number" property2="authorization_code" property3="administrator" name="orig" scope="rt" />
+  </entity>
+  <entity type="Component Entity" displayName="url_paths" id="url_paths" plugin="true" pluginDisplayName="URL PATHs" >
+    <property fieldType="String" mandatory="false" name="url_path" multiList="false" multi="false" />
+    <property fieldType="String" mandatory="false" name="message_type" multiList="false" multi="false" />
+    <key type="component" property1="url_path" />
+  </entity>
+  <entity type="rdbms-standard" displayName="Informacion de cuentas PSP" id="ent_psp" emfProvision="false" dualControl="false" wanReplicationMode="ASYNC" abstract="false" unique="false" unifiedView="false" offload="false" offloadNRT="false" recoveryBlocksize="100" recoveryInterval="100" cacheEnabled="false" cacheExpiryTime="-1" maxCacheEntries="100" crudPanel="true" crudReadOnly="false" freesort="true" expanded="false" expandedLimit="100" parallelInsert="false" cleanupAfterAuth="false" includeShardOwner="false" >
+    <property mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="bcra_id" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cbu" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="institucion" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="fiid" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="requiere_hv" fieldType="boolean" size="0" precision="0" scale="0" filterMandatory="false" >
+      <value name="NO" value="0" useNumberAsValue="false" display="NO" multi="false" code="-1" />
+      <value name="SI" value="1" useNumberAsValue="false" display="SI" multi="false" code="-1" />
+    </property>
+    <property mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="num_doc" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="ambiente" fieldType="String" size="25" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="cvu" fieldType="String" size="50" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="identification_number" fieldType="String" size="15" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="tipo_doc" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="tipo_cuenta" fieldType="String" size="2" precision="0" scale="0" filterMandatory="false" />
+    <property mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="num_cuenta" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <operation type="select" id="consulta" realtime="true" selectGroup="AND" useTable="false" key="key" maxRows="50" ignoreCache="false" >
+      <selector name="bcra_id" operator="eq" />
+      <selector name="cbu" operator="eq" />
+    </operation>
+    <operation type="select" id="consultahv" realtime="true" selectGroup="AND" useTable="false" key="key_hv" maxRows="50" ignoreCache="false" >
+      <selector name="bcra_id" operator="eq" />
+    </operation>
+    <key type="rdbms" name="key" unique="true" scope="rt" property1="bcra_id" property2="cbu" />
+    <key type="rdbms" name="key_hv" unique="false" scope="rt" property1="bcra_id" />
+  </entity>
+  <entity type="Component Entity" displayName="Datos_HV" id="ent_HV_datos" plugin="true" >
+    <property fieldType="String" mandatory="false" name="Id" multiList="false" multi="false" />
+    <property fieldType="String" mandatory="false" name="cuenta" multiList="false" multi="false" />
+    <property fieldType="String" mandatory="false" name="TipoDoc" multiList="false" multi="false" />
+    <property fieldType="String" mandatory="false" name="NroDoc" multiList="false" multi="false" />
+    <key type="component" property1="Id" />
+  </entity>
+  <entity type="Component Entity" displayName="Parámetros CVV2 Dinamico" description="Entidad de parámetros para CVV2Dinámico" id="ent_cvv2dinamico_parameters" plugin="true" >
+    <property fieldType="String" displayName="ID" description="Id del registro" mandatory="true" name="id" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Nombre Parámetro" description="Nombre Parámetro filtro de busqueda" mandatory="true" name="name" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Descripción del Parámetro" description="Descripción del Parámetro" mandatory="false" name="description" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Valor" description="Valor parametrizado o resultado de la búsqueda" mandatory="false" name="value" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Estado" description="Estado del Registro A = Activo; I = Inactivo" mandatory="true" default="A" name="status" multiList="false" multi="false" />
+    <key type="component" property1="id" />
+  </entity>
+  <entity type="rdbms-log" displayName="Log Plan N - Amex" id="ent_log_plan_n_amex" emfProvision="false" dualControl="false" wanReplicationMode="ASYNC" abstract="false" unique="false" unifiedView="false" partitionsAhead="4" blockSize="-1" interval="Generated" timeOfDay="0:0:0" offload="true" offloadNRT="true" recoveryBlocksize="100" recoveryInterval="100" crudPanel="true" crudReadOnly="true" freesort="false" expanded="false" expandedLimit="100" parallelInsert="true" cleanupAfterAuth="false" retention="7d" partitionSize="Generated" >
+    <property displayName="MTI" description="MTI" mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="mti" fieldType="String" size="4" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Request Timestamp" description="Request Timestamp" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="request_timestamp" fieldType="String" size="30" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Primary Account Number" description="P2" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="STANDARD" sensitivityLevel="20" roleCompControl="PAN Role Protection" compressed="false" name="pan" fieldType="String" size="19" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Processing Code" description="P3" mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="processing_code" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Amount Transaction" description="P4" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="amount_transaction" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Transmission Date Time" description="P7" mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="transmission_date_time" fieldType="String" size="10" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Audit Number" description="P11" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="stan" fieldType="String" size="12" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <property displayName="Local Transaction Time" description="P12" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="local_transaction_time" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Acquirer Institution ID" description="P32" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="acquirer_id" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CardAcceptorTerminal" description="P41" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="card_acc_ter_id" fieldType="String" size="19" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Card Acceptor Id Code" description="P42" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="card_acc_id_code" fieldType="String" size="19" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Currency Code" description="P49" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="currency_trx" fieldType="String" size="3" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Retrieval Reference Number" description="P37" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="rrn" fieldType="String" size="19" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Deferred Transaction Indicator" description="P123 - 60 - Subtag 26" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="deferred_transaction_indicator" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Plan Speed Pay" description="P123 - 60 - Subtag 27" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="plan_speed_pay" fieldType="String" size="19" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Seller ID" description="P123 - 60 - Subtag 28" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="seller_id" fieldType="String" size="50" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <property displayName="Applied Rate" description="P123 - 60 - Subtag 40" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" background="lightyellow" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="applied_rate" fieldType="String" size="19" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Debit Credti Indicator" description="Debit_Credti_Indicator" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="debit_credti_indicator" fieldType="String" size="1" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Product Type" description="Product Type" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="product_type" fieldType="String" size="19" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="TBT Creation Date" description="TBT Creation Date" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="creation_date" fieldType="String" size="10" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Response Code Hiso" description="Código de respuesta homologado hacia eps" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" background="lightyellow" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="response_code_hiso" fieldType="String" size="3" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Response Message Hiso" description="Mensaje de respuesta homologado hacia eps" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" background="lightyellow" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="response_message_hiso" fieldType="String" size="100" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Number Installments" description="P123 - 0B - Subtag 03" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="number_installments" fieldType="String" size="10" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Transaction Gross Amount" description="Transaction Gross Amount" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="transaction_gross_amount" fieldType="String" size="10" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Response Code Amex" description="Código de respuesta amex" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" background="lightyellow" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="response_code_amex" fieldType="String" size="5" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Response Message Amex" description="Mensaje de respuesta Amex" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="response_message_amex" fieldType="String" size="100" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Response Code UPF" description="Código de respuesta homologado UPF" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="response_code_upf" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Response API AMX" description="Y: Si respondio :: N: No respondió" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="response_api_amx" fieldType="String" size="1" precision="0" scale="0" filterMandatory="false" />
+    <operation type="insert" id="insert" realtime="true" useTable="false" ignoreDuplicate="false" />
+    <key type="log" property1="mti" property2="processing_code" property3="stan" name="key" scope="rt" />
+  </entity>
+  <entity type="Component Entity" displayName="Parámetros Plan N Amex" description="Entidad de parámetros para Amex" id="ent_plan_n_amex_parameters" plugin="true" >
+    <property fieldType="String" displayName="ID" description="Id del registro" mandatory="true" name="id" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Nombre Parámetro" description="Nombre Parámetro filtro de busqueda" mandatory="true" name="name" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Descripción del Parámetro" description="Descripción del Parámetro" mandatory="false" name="description" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Valor" description="Valor parametrizado o resultado de la búsqueda" mandatory="false" name="value" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Estado" description="Estado del Registro A = Activo; I = Inactivo" mandatory="true" default="A" name="status" multiList="false" multi="false" />
+    <key type="component" property1="id" />
+  </entity>
+  <entity type="Component Entity" displayName="Error Codes CVV2 Dinamico" id="ent_error_cvv2" plugin="true" pluginDisplayName="Error Codes CVV2 Dinamico" >
+    <property fieldType="String" displayName="ID" mandatory="false" default="size-89" name="id" multiList="false" multi="false" />
+    <property fieldType="String" displayName="HTTP Status Code" mandatory="false" name="http_status_code" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Descripcion" mandatory="false" name="description" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Action Code" mandatory="false" name="action_code" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Respuesta Validacion" mandatory="false" name="validation_response" multiList="false" multi="false" />
+    <property fieldType="String" displayName="Estado" mandatory="false" name="status" multiList="false" multi="false" />
+    <key type="component" property1="id" />
+  </entity>
+  <entity type="rdbms-log" displayName="Log CVV2 Dinamico" id="ent_log_cvv2" emfProvision="false" dualControl="false" wanReplicationMode="ASYNC" abstract="false" unique="false" unifiedView="false" partitionsAhead="4" blockSize="-1" interval="Generated" timeOfDay="0:0:0" offload="true" offloadNRT="true" recoveryBlocksize="100" recoveryInterval="100" crudPanel="true" crudReadOnly="true" freesort="false" expanded="false" expandedLimit="100" parallelInsert="true" cleanupAfterAuth="false" retention="7d" partitionSize="Generated" >
+    <property displayName="MTI" description="MTI" mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="mti" fieldType="String" size="4" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Request Timestamp" description="Request Timestamp" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="request_timestamp" fieldType="String" size="30" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Primary Account Number" description="P2" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="STANDARD" sensitivityLevel="20" roleCompControl="PAN Role Protection" compressed="false" name="pan" fieldType="String" size="19" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Processing Code" description="P3" mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="processing_code" fieldType="String" size="6" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Amount Transaction" description="P4" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="amount_transaction" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Transmission Date Time" description="P7" mandatory="true" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="transmission_date_time" fieldType="String" size="10" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Audit Number" description="P11" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="stan" fieldType="String" size="6" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <property displayName="Local Transaction Time" description="P12" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="local_transaction_time" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Acquirer Institution ID" description="P32" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="acquirer_id" fieldType="String" size="12" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="CardAcceptorTerminal" description="P41" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="card_acc_ter_id" fieldType="String" size="19" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Currency Code" description="P49" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="currency_trx" fieldType="String" size="3" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Retrieval Reference Number" description="P37" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="rrn" fieldType="String" size="19" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Response Validation" description="P123 - 02" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="response_validation" fieldType="String" size="50" precision="0" scale="0" filter="exact" filterMandatory="false" />
+    <property displayName="HISO Response Code" description="Código de respuesta homologado hacia eps" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" background="lightyellow" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="action_code" fieldType="String" size="3" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="HISO Response Message" description="Mensaje de respuesta homologado hacia eps" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" background="lightyellow" visible="false" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="response_message" fieldType="String" size="100" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="Response Code" description="Código de respuesta UPF" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" background="lightyellow" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="response_code" fieldType="String" size="3" precision="0" scale="0" filterMandatory="false" />
+    <property displayName="OTP Response Code" description="Código de respuesta OTP" mandatory="false" minWidth="-1" maxWidth="-1" minHeight="-1" maxHeight="-1" background="lightyellow" visible="true" readonly="false" protectionMode="NONE" sensitivityLevel="10" compressed="false" name="otp_validation_error_code" fieldType="String" size="5" precision="0" scale="0" filterMandatory="false" />
+    <operation type="insert" id="insert" realtime="true" useTable="false" ignoreDuplicate="false" />
+    <key type="log" property1="mti" property2="processing_code" property3="stan" name="key" scope="rt" />
+  </entity>
+</entity-model>

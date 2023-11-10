@@ -1,0 +1,6 @@
+<nodes>
+  <!inc "nodes/CVV2Dinamico_OutSoap.xml">
+  <!inc "nodes/CVV2Dinamico_InHISO.xml">
+  <!inc "nodes/CVV2Dinamico_InHISO_Sim.xml">
+  <!inc "nodes/CVV2Dinamico_InRest_Sim.xml">
+</nodes>

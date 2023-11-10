@@ -1,0 +1,356 @@
+<node type="ep-model-generic-sim" acquiringIssuing="Both" id="CVV2Dinamico_InHISO_Sim" description="Endpoint ISO93 SIM" >
+  <metaData characterSet="ASCII" >
+    <messageType requestMessageType="1804" description="Network Management Request" initiatingRequest="true" responseMessageType="1814" />
+    <messageType requestMessageType="1100" description="Authorization Transaction" initiatingRequest="true" responseMessageType="1110" />
+    <messageType requestMessageType="2644" description="Administrative Error" initiatingRequest="false" />
+    <fieldAttributeType attributeType="a" description="Alphabetic characters (a-z, A-Z)" justification="Left" padding="0x30" lengthEncoding="Unpacked" lengthUnit="Default" packJustification="Right" packFill="0x0" />
+    <fieldAttributeType attributeType="n" description="Numeric characters" justification="Right" padding="0x30" lengthEncoding="Unpacked" lengthUnit="Default" packJustification="Right" packFill="0x0" />
+    <fieldAttributeType attributeType="p" description="Space (pad) characters" justification="Left" padding="0x30" lengthEncoding="Unpacked" lengthUnit="Default" packJustification="Right" packFill="0x0" />
+    <fieldAttributeType attributeType="S" description="Special characters" justification="Left" padding="0x30" lengthEncoding="Unpacked" lengthUnit="Default" packJustification="Left" packFill="0x0" />
+    <fieldAttributeType attributeType="an" description="Alphabetic and numeric characters" justification="Left" padding="0x30" lengthEncoding="Unpacked" lengthUnit="Default" packJustification="Right" packFill="0x0" />
+    <fieldAttributeType attributeType="ns" description="Numeric and special characters" justification="Left" padding="0x30" lengthEncoding="Unpacked" lengthUnit="Default" packJustification="Right" packFill="0x0" />
+    <fieldAttributeType attributeType="ans" description="Alphabetic, numeric, and special characters" justification="Left" padding="0x30" lengthEncoding="Unpacked" lengthUnit="Default" packJustification="Left" packFill="0x0" />
+    <fieldAttributeType attributeType="z" description="Track 2 and 3 code set as defined in ISO 4909 and ISO 7813" justification="Left" padding="0x30" lengthEncoding="Unpacked" lengthUnit="Default" packJustification="Left" packFill="0x0" />
+    <fieldAttributeType attributeType="b" description="Binary data (raw bytes)" justification="Left" padding="0x30" lengthEncoding="Unpacked" lengthUnit="Default" packJustification="Left" packFill="0x0" />
+    <fieldAttributeType attributeType="i" justification="Right" padding="0x00" lengthEncoding="Unpacked" lengthUnit="Default" packJustification="Right" packFill="0x0" />
+    <fieldAttributeType attributeType="h" description="Binary data encoded as a hex string" justification="Left" padding="0x30" lengthEncoding="Unpacked" lengthUnit="Default" packJustification="Right" packFill="0x0" />
+    <fieldAttributeType attributeType="H" justification="Left" padding="0x30" lengthEncoding="Unpacked" lengthUnit="Default" packJustification="Left" packFill="0x0" />
+    <messageFieldName fieldId="FMTI" description="MTI" />
+    <messageFieldName fieldId="FB1" description="Primary Bitmap" />
+    <messageFieldName fieldId="FB2" description="Secundary Bit Map" />
+    <messageFieldName fieldId="F2" description="Primary Account Number" />
+    <messageFieldName fieldId="F3" description="Processing Code" />
+    <messageFieldName fieldId="F4" description="Amount, Transaction" />
+    <messageFieldName fieldId="F7" description="Date and Time, Transmission" />
+    <messageFieldName fieldId="F11" description="Systems Trace Audit Number" />
+    <messageFieldName fieldId="F12" description="Date and Time, Local Transaction" />
+    <messageFieldName fieldId="F14" description="Date, Expiration" />
+    <messageFieldName fieldId="F22" description="Point of Service Data Code" />
+    <messageFieldName fieldId="F24" description="Function Code" />
+    <messageFieldName fieldId="F32" description="Acquirer Institution ID Code" />
+    <messageFieldName fieldId="F37" description="Retrieval Reference Number" />
+    <messageFieldName fieldId="F39" description="Action Code" />
+    <messageFieldName fieldId="F40" description="Service Code" />
+    <messageFieldName fieldId="F41" description="Card Acceptor Terminal ID" />
+    <messageFieldName fieldId="F49" description="Currency Code, Transaction" />
+    <messageFieldName fieldId="F123" description="Primary Reserved Private 123" />
+    <messageFieldName fieldId="F60" description="PAN Anonizado" />
+    <sequence id="stan" offset="111111" period="999999" allocationBlockSize="10000" persistenceFrequency="1" />
+    <sequence id="rrn" offset="111111111111" period="999999999999" allocationBlockSize="10000" persistenceFrequency="1" />
+  </metaData>
+  <protocol type="protocol" messageFamily="ISO8583" isBitmapSequential="true" >
+    <supportedMessageTypes enabled="true" direction="*" messageType="1804" />
+    <supportedMessageTypes enabled="true" direction="*" messageType="1814" />
+    <supportedMessageTypes enabled="true" direction="*" messageType="1100" />
+    <supportedMessageTypes enabled="true" direction="*" messageType="1110" />
+    <supportedMessageTypes enabled="true" direction="*" messageType="2644" />
+    <defaultField type="simple-field" attribute="an" lengthType="-" length="4" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="FMTI" enabled="true" rawProcessingRequired="true" />
+    <defaultField type="simple-field" attribute="h" lengthType="-" length="8" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="FB1" enabled="true" rawProcessingRequired="false" />
+    <defaultField type="simple-field" attribute="h" lengthType="-" length="8" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="FB2" enabled="true" rawProcessingRequired="false" />
+    <defaultField type="simple-field" attribute="n" lengthType="LL" length="19" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="F2" enabled="true" rawProcessingRequired="true" />
+    <defaultField type="simple-field" attribute="an" lengthType="-" length="6" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="F3" enabled="true" rawProcessingRequired="true" />
+    <defaultField type="simple-field" attribute="n" lengthType="-" length="12" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="F4" enabled="true" rawProcessingRequired="true" />
+    <defaultField type="simple-field" attribute="n" lengthType="-" length="10" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="F7" enabled="true" rawProcessingRequired="true" />
+    <defaultField type="simple-field" attribute="n" lengthType="-" length="6" stripInboundPadding="false" lengthUnit="Default" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="F11" enabled="true" rawProcessingRequired="true" />
+    <defaultField type="simple-field" attribute="n" lengthType="-" length="12" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="F12" enabled="true" rawProcessingRequired="false" />
+    <defaultField type="simple-field" attribute="n" lengthType="-" length="4" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="F14" enabled="true" rawProcessingRequired="true" />
+    <defaultField type="simple-field" attribute="an" lengthType="-" length="12" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="F22" enabled="true" rawProcessingRequired="true" />
+    <defaultField type="simple-field" attribute="n" lengthType="-" length="3" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="F24" enabled="true" rawProcessingRequired="true" />
+    <defaultField type="simple-field" attribute="n" lengthType="LL" length="11" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="F32" enabled="true" rawProcessingRequired="true" />
+    <defaultField type="simple-field" attribute="ans" lengthType="-" length="12" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="F37" enabled="true" rawProcessingRequired="true" />
+    <defaultField type="simple-field" attribute="n" lengthType="-" length="3" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="F39" enabled="true" rawProcessingRequired="true" />
+    <defaultField type="simple-field" attribute="n" lengthType="-" length="3" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="F40" enabled="true" rawProcessingRequired="true" />
+    <defaultField type="simple-field" attribute="ans" lengthType="-" length="16" justification="Left" pad="0x20" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="F41" enabled="true" rawProcessingRequired="true" />
+    <defaultField type="simple-field" attribute="n" lengthType="-" length="3" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="F49" enabled="true" rawProcessingRequired="true" />
+    <defaultField type="simple-field" attribute="b" lengthType="LLL" length="999" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="F123" enabled="true" rawProcessingRequired="true" />
+    <defaultField type="simple-field" attribute="b" lengthType="LLL" length="999" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" fieldId="F60" enabled="true" rawProcessingRequired="true" />
+    <header type="structured-header" enabled="true" direction="*" headerType="2-byte-payload-length" length="2" >
+      <field enabled="true" attribute="i" lengthType="-" length="2" comments="Payload Length" stripInboundPadding="false" logged="true" sensitivityLevel="0" consumeEndOfFieldIndicator="true" presence="M" rawProcessingRequired="false" />
+      <inboundAssignments enabled="true" >
+        <assignment enabled="true" sourceExpr="header.contents.1" sourceAsString="false" target="ctx.payloadLength" />
+      </inboundAssignments>
+      <outboundAssignments enabled="true" >
+        <assignment enabled="true" sourceExpr="length(payload)" sourceAsString="false" target="header.contents.1" />
+      </outboundAssignments>
+    </header>
+    <messageComposition type="message-composition" enabled="true" direction="*" messageTypes="1804" >
+      <field enabled="true" presence="M" fieldId="FMTI" save="true" />
+      <field enabled="true" presence="M" fieldId="F7" save="true" />
+      <field enabled="true" presence="M" fieldId="F11" save="true" />
+      <field enabled="true" presence="M" fieldId="F12" save="true" />
+      <field enabled="true" presence="M" fieldId="F24" save="true" />
+    </messageComposition>
+    <messageComposition type="message-composition" enabled="true" direction="*" messageTypes="1814" >
+      <field enabled="true" presence="M" fieldId="FMTI" save="true" />
+      <field enabled="true" presence="M" fieldId="F7" save="true" />
+      <field enabled="true" presence="M" fieldId="F11" save="true" />
+      <field enabled="true" presence="M" fieldId="F12" save="true" />
+      <field enabled="true" presence="M" fieldId="F24" save="true" />
+      <field enabled="true" presence="M" fieldId="F39" save="true" />
+    </messageComposition>
+    <messageComposition type="message-composition" enabled="true" direction="*" messageTypes="1100" >
+      <field enabled="true" presence="M" fieldId="FMTI" save="true" />
+      <field enabled="true" presence="M" fieldId="F2" save="true" />
+      <field enabled="true" presence="M" fieldId="F3" save="true" />
+      <field enabled="true" presence="O" fieldId="F4" save="true" />
+      <field enabled="true" presence="M" fieldId="F7" save="true" />
+      <field enabled="true" presence="M" fieldId="F11" save="true" />
+      <field enabled="true" presence="M" fieldId="F12" save="false" />
+      <field enabled="true" presence="O" fieldId="F14" save="false" />
+      <field enabled="true" presence="M" fieldId="F22" save="true" />
+      <field enabled="true" presence="O" fieldId="F32" save="true" />
+      <field enabled="true" presence="M" fieldId="F37" save="true" />
+      <field enabled="true" presence="O" fieldId="F41" save="true" />
+      <field enabled="true" presence="M" fieldId="F49" save="true" />
+      <field enabled="true" presence="O" fieldId="F123" save="false" />
+      <field enabled="true" presence="O" fieldId="F60" save="true" />
+    </messageComposition>
+    <messageComposition type="message-composition" enabled="true" direction="*" messageTypes="1110" >
+      <field enabled="true" presence="M" fieldId="FMTI" save="false" />
+      <field enabled="true" presence="M" fieldId="F2" save="false" />
+      <field enabled="true" presence="M" fieldId="F3" save="false" />
+      <field enabled="true" presence="O" fieldId="F4" save="false" />
+      <field enabled="true" presence="M" fieldId="F7" save="false" />
+      <field enabled="true" presence="M" fieldId="F11" save="false" />
+      <field enabled="true" presence="M" fieldId="F12" save="false" />
+      <field enabled="true" presence="O" fieldId="F32" save="false" />
+      <field enabled="true" presence="M" fieldId="F37" save="false" />
+      <field enabled="true" presence="M" fieldId="F39" save="false" />
+      <field enabled="true" presence="O" fieldId="F123" save="false" />
+      <field enabled="true" presence="O" fieldId="F60" save="false" />
+      <field enabled="true" presence="M" fieldId="F49" save="false" />
+    </messageComposition>
+    <messageComposition type="message-composition" enabled="true" direction="*" messageTypes="1644" >
+      <field enabled="true" presence="M" fieldId="FMTI" save="false" />
+      <field enabled="true" presence="M" fieldId="F7" save="false" />
+      <field enabled="true" presence="M" fieldId="F11" save="false" />
+      <field enabled="true" presence="M" fieldId="F24" save="false" />
+    </messageComposition>
+    <correlationRules multipleAliases="false" >
+      <alias enabled="true" description="Network Management Alias" aliasId="nm-alias" >
+        <field fieldId="padLeft(ext.F11, 48, 6)" length="6" justification="Right" pad="0x30" />
+      </alias>
+      <alias enabled="true" description="Transaction Financial" aliasId="orig-alias" >
+        <field fieldId="ext.F11" length="6" justification="Right" pad="0x30" />
+        <field fieldId="ext.F37" length="12" justification="Right" pad="0x30" />
+      </alias>
+      <aliasSelector enabled="true" messageTypes="1804,1814" direction="*" aliasId="nm-alias" />
+      <aliasSelector enabled="true" description="orig-alias" messageTypes="1100,1110" direction="*" aliasId="orig-alias" />
+    </correlationRules>
+  </protocol>
+  <sessions >
+    <session type="scenario-application" name="Sim Financial Transactions" useSessVariable="false" responseTimeout="60000" >
+      <inboundHandling />
+      <outboundHandling >
+        <messageTypeAssignment sourceExpr="ext.FMTI" sourceAsString="false" target="ctx.message_type" />
+        <assignments type="ep-model-conditional-script" enabled="true" messageTypes="1100" script="return true" />
+      </outboundHandling>
+      <loadGenerator responseDelay="0" >
+        <generator name="Valid OTP" enabled="true" weight="100.0" >
+          <script><![CDATA[import java.text.SimpleDateFormat as SDF
+
+def msg = [
+FMTI : '1100',
+F2   : '4468214523838591',
+F3   : '001000',
+F4   : '000000000100',
+F7   : '1018204619', 
+F11  : '009138',    
+F12  : '231018154616', 
+F14  : '2410',
+F22  : '100350800001',
+//F24  : '106',
+F32  : '450799',
+F37  : '000000000105', 
+F41  : '59385501',
+F49  : '840',
+F60  : '01019KDJF9485IIR834K2K40',
+F123 : '02009 0  1  0 0300382405046        123456789012345                       07001741006231019'
+]
+
+
+sendMessage(message: msg)]]></script>
+        </generator>
+        <generator name="Invalid OTP Error" enabled="true" weight="100.0" >
+          <script><![CDATA[import java.text.SimpleDateFormat as SDF
+
+def msg = [
+FMTI : '1100',
+F2   : '4468214523838591',
+F3   : '001000',
+F4   : '000000000100',
+F7   : '1018204619', 
+F11  : '009138',    
+F12  : '231018154616', 
+F14  : '2410',
+F22  : '100350800001',
+//F24  : '106',
+F32  : '450799',
+F37  : '000000000105', 
+F41  : '59385501',
+F49  : '840',
+F60  : '01019KDJF9485IIR834K2K40',
+F123 : '02009 0  1  0 0300385205046        123456789012345                       07001741006231019'
+]
+
+
+sendMessage(message: msg)]]></script>
+        </generator>
+        <generator name="Timeout" enabled="true" weight="100.0" >
+          <script><![CDATA[import java.text.SimpleDateFormat as SDF
+
+def msg = [
+FMTI : '1100',
+FMTI : '1100',
+F2   : '4468214523838591',
+F3   : '001000',
+F4   : '000000000100',
+F7   : '1018204619', 
+F11  : '009138',    
+F12  : '231018154616', 
+F14  : '2410',
+F22  : '100350800001',
+//F24  : '106',
+F32  : '450799',
+F37  : '000000000105', 
+F41  : '59385501',
+F49  : '840',
+F60  : '01019KDJF9485IIR834K2K40',
+F123 : '02009 0  1  0 0300312305046        123456789012345                       07001741006231019'
+]
+
+
+sendMessage(message: msg)]]></script>
+        </generator>
+        <responder enabled="true" messageTypes="1110" >
+          <script><![CDATA[def response = [
+  FMTI: '1110',
+  F3: message.F3,
+  F4: message.F4,
+  F7: message.F7,
+  F11: message.F11,
+  F12: message.F12,
+  F22: message.F22,
+  F32: message.F32,
+  F35: message.F35,
+  F37: message.F37,
+  F38: message.F38,
+  F39: '00',
+  F49: message.F49
+]
+sendMessage(message:response)]]></script>
+        </responder>
+      </loadGenerator>
+    </session>
+    <session type="network-management-v3" name="Sim Network Management" triggerCheckTimer="5000" >
+      <messageTypeAssignment sourceExpr="ext.FMTI" sourceAsString="false" target="ctx.message_type" />
+      <function type="peer-nw-function" enabled="true" name="Receive SignOn" timeout="10" precondition="ext.FMTI==&apos;1804&apos; &amp;&amp; ext.F24==&apos;801&apos;" sendResponseExpr="return true" >
+        <responseScript><![CDATA[ext.FMTI = '1814'
+ext.F7 = saved.F7
+ext.F11 = saved.F11
+ext.F12 = saved.F12
+ext.F24 = '801'
+ext.F39 = '800'
+channel.self_signon = 'true'
+channel.peer_signon = 'true' 
+return 1  ]]></responseScript>
+        <responseCompletionScript><![CDATA[endpoint."${ctx.channel_id}".logged_on = 'true' 
+channel.self_signon = 'true'
+channel.peer_signon = 'true'
+return true]]></responseCompletionScript>
+      </function>
+      <function type="peer-nw-function" enabled="true" name="Receive Echo" timeout="10" responseCompletionScript="return true" sendResponseExpr="return true" >
+        <precondition><![CDATA[channel.peer_signon=='true'  && ext.FMTI=='1804'  && ext.F24=='831' && endpoint."${ctx.channel_id}".logged_on == 'true' ]]></precondition>
+        <responseScript><![CDATA[ext.FMTI = '1814'
+ext.F7 = saved.F7
+ext.F11 = saved.F11
+ext.F12 = saved.F12
+ext.F24 = '831'
+ext.F39 = '800' 
+channel.self_signon = 'true' 
+return 1]]></responseScript>
+      </function>
+      <function type="endpoint-nw-function" enabled="true" name="Send Sign On" timeout="10" precondition="!(channel.self_signon==&apos;true&apos;)" retries="0" >
+        <triggerCondition type="startup" name="Automatic Sign On" />
+        <triggerCondition type="command" name="SIGN-ON" command="SIGN-ON" />
+        <requestScript><![CDATA[ext.FMTI = '1804'
+ext.F7   = saved.F7  
+ext.F11  = saved.F11
+ext.F12  = saved.F12
+ext.F24  = '801'
+endpoint."${ctx.channel_id}".logged_on = 'true'
+channel.self_signon = 'true'
+channel.peer_signon ='true'
+return 1]]></requestScript>
+        <responseScript><![CDATA[channel.self_signon = 'true'
+channel.peer_signon ='true'
+endpoint."${ctx.channel_id}".logged_on = 'true' 
+return true]]></responseScript>
+      </function>
+      <function type="peer-nw-function" enabled="true" name="Receive Sign Off" timeout="10" precondition="(ext.FMTI == &apos;1804&apos; || ext.FMTI == &apos;1805&apos;) &amp;&amp; (ext.F24 == &apos;802&apos;)" >
+        <requestScript><![CDATA[saved = ext.copy()
+ext.remove()
+return 1 ]]></requestScript>
+        <responseScript><![CDATA[ext.FMTI = '1814'
+ext.F7 ?= saved.F7
+ext.F11 ?= saved.F11
+ext.F12 ?= saved.F12
+ext.F24 ?= saved.F24
+ext.F39 = '800'
+channel.self_signon = 'true' 
+
+return true]]></responseScript>
+      </function>
+      <function type="endpoint-nw-function" enabled="true" name="Send Sign Off" timeout="10" retries="0" >
+        <triggerCondition type="startup" name="Automatic Sign On" />
+        <triggerCondition type="command" name="SIGN-OFF" command="SIGN-OFF" />
+        <requestScript><![CDATA[ext.FMTI = '1804'
+ext.F7   = saved.F7  
+ext.F11  = saved.F11 
+ext.F12  = saved.F12
+ext.F24  = '802'
+endpoint."${ctx.channel_id}".logged_on = 'false'
+channel.self_signon = 'false'
+channel.peer_signon ='false'
+return 1]]></requestScript>
+        <responseScript><![CDATA[channel.self_signon = 'false'
+channel.peer_signon ='false'
+endpoint."${ctx.channel_id}".logged_on = 'false' 
+return true]]></responseScript>
+      </function>
+      <function type="endpoint-nw-function" enabled="true" name="Send Echo" timeout="10" retries="2" responseScript="return true" >
+        <precondition><![CDATA[channel.self_signon == 'true' && channel.peer_signon== 'true' && endpoint."${ctx.channel_id}".logged_on == 'true' ]]></precondition>
+        <triggerCondition type="timer" name="Regular Echo" timer="1200" />
+        <triggerCondition type="command" name="Send echo" command="ECHO" />
+        <requestScript><![CDATA[ext.FMTI = '1804'
+ext.F7   = formatDate('MMddHHmmss')
+ext.F11  = endpointSequence('stan')
+ext.F12  = formatDate('YYMMddHHmmss')
+ext.F24  = '831'
+return 1]]></requestScript>
+      </function>
+      <check enabled="true" direction="*" messageTypes="1100,1110" check="(endpoint.&quot;\${ctx.channel_id}&quot;.logged_on==&apos;true&apos;)" />
+      <command name="ECHO" autoComplete="true" retryAllowed="true" onlineRequired="false" >
+        <enabled><![CDATA[channel.self_signon == 'true' && channel.peer_signon == 'true'
+//endpoint."${ctx.channel_id}".logged_on=='true']]></enabled>
+      </command>
+      <command name="SIGN-OFF" autoComplete="true" retryAllowed="true" onlineRequired="false" />
+      <command name="SIGN-ON" enabled="!(channel.self_signon == &apos;true&apos;)" autoComplete="true" retryAllowed="true" onlineRequired="false" />
+      <status enabled="true" criteria="!(channel.self_signon==&apos;true&apos;) &amp;&amp; !(channel.peer_signon==&apos;true&apos;)" state="1" code="1" description="Signed Off" />
+      <status enabled="true" criteria="channel.self_signon==&apos;true&apos;  &amp;&amp; !(channel.peer_signon==&apos;true&apos;)" state="1" code="2" description="Waiting For Peer" />
+      <status enabled="true" criteria="!(channel.self_signon==&apos;true&apos;) &amp;&amp;   channel.peer_signon==&apos;true&apos;" state="1" code="3" description="Signing On" />
+      <status enabled="true" criteria="(channel.self_signon==&apos;true&apos;) &amp;&amp;  (channel.peer_signon==&apos;true&apos;)" state="0" code="0" description="Active" />
+    </session>
+    <sessionSelector enabled="true" messageTypes="1100,1110" direction="*" session="Sim Financial Transactions" />
+    <sessionSelector enabled="true" messageTypes="1804,1814,2644" direction="*" session="Sim Financial Transactions" />
+  </sessions>
+  <channel type="sim-ep-model-channel" inboundRateLimit="-1" sessionLimit="-1" outboundRateLimit="-1" messageLimit="1000" id="cvv2_sim_00" group="Interchanges" routingMode="SAME ROUTE" synchronousConnection="false" generateStatusMessages="false" includedInSPM="false" >
+    <route type="ICEXSTCPIPClientRoute2" switchPort="8051" switchConnectMode="ONDEMAND" enabled="true" mode="BIDIRECTIONAL" connectionRouting="true" statusMessages="false" connectionLostGracePeriod="0" ctrlHdr="NONE" tcpConnectMode="ONSTART" syncMessageExchange="false" closeOnResponse="false" responseTimer="6000" >
+      <harouter id="1" />
+      <devprotocol type="devprotocolCustomHeader" lengthadjustment="2" lengthposition="0" lengthsize="2" lengthtype="BINARY" headerlength="2" msgcompletiontimer="0" maxdevlen="1048576" mindevlen="0" passthru="PAYLOAD" />
+      <connprofile type="connprofiletcpipTCPIPClient" connecttimer="-1" freeconnsmax="-1" initretry="1" initretrytimer="1" contretrytimer="1" maxrecvqmsgs="0" maxconns="-1" >
+        <address host="127.0.0.1" port="12001" />
+      </connprofile>
+    </route>
+  </channel>
+</node>
